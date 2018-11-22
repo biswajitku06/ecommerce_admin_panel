@@ -37,18 +37,18 @@
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
-                    <span class="add-on bg_lg"><i class="icon-envelope"> </i></span><input type="email" name="email" placeholder="email" />
+                    <span class="add-on bg_lg"><i class="icon-envelope"> </i></span><input type="email" name="email" placeholder="email" /><span  style="color:red;margin-left:20px">{{$errors->has('email')?$errors->first('email'):''}}</span>
                 </div>
-                <span class="has-danger" style="color:red;margin-left:42px">{{$errors->has('email')?$errors->first('email'):''}}</span>
+
             </div>
 
         </div>
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">
-                    <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" name="password" placeholder="Password" />
+                    <span class="add-on bg_ly"><i class="icon-lock"></i></span><input type="password" name="password" placeholder="Password" /><span class="has-danger" class="has-danger" style="color:red;margin-left:20px">{{$errors->has('password')?$errors->first('password'):''}}</span>
                 </div>
-                <span class="has-danger" style="color:red;margin-left:20px">{{$errors->has('password')?$errors->first('password'):''}}</span>
+
             </div>
         </div>
 
@@ -57,7 +57,7 @@
             {{--<span class="pull-right"><a type="submit" class="btn btn-success" >Login</a></span>--}}
             <button type="submit" class="btn btn-success pull-right">Login</button>
         </div>
-        <a href="{{route('registration')}}"><h5 style="margin-left: 115px">Don't have an account? <span style="color:red">Register </span></h5></a>
+        <h5 style="margin-left: 115px">Don't have an account?<a href="{{route('registration')}}"> <span style="color:red">Register </span></a></h5>
 
     </form>
 

@@ -5,7 +5,7 @@ $(document).ready(function(){
 
         var current=$('#current_pwd').val();
 
-        var my_url="http://localhost/Admin_panel/public";
+        var my_url="http://localhost/ecommerce_admin_panel/public";
         $.ajax({
             type:'get',
              url:my_url+'/admin/check_password',
@@ -30,9 +30,9 @@ $(document).ready(function(){
 
 
 	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();
-	
+
 	$('select').select2();
-	
+
 	// category Form Validation
     $("#add_category").validate({
 		rules:{
@@ -236,7 +236,7 @@ $(document).ready(function(){
 
 //sweet alert for delete the image
     $('.deleteRecord').click(function(){
-        var id=$(this).attr('rel')
+        var id=$(this).attr('rel');
         var deletefunction=$(this).attr('rel1');
         swal({
                 title: "Are you sure?",

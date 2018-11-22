@@ -20,6 +20,15 @@ Route::group(['middleware'=>['auth']],function(){
     Route::get('/admin/check_password','admin\DashboardController@checkpass');
     Route::post('update-password','admin\DashboardController@updatePassword')->name('updatePassword');
 
+    //admin profile
+   Route::get('profile','admin\DashboardController@showprofile')->name('profile');
+
+   //user list
+
+    Route::get('user_list','admin\DashboardController@showuserlist')->name('userlist');
+    Route::get('user_admin/{id}','admin\DashboardController@usertosuperadmin')->name('acceptUser');
+    Route::get('delete-user/{id}','admin\DashboardController@deleteUser');
+
     //category
     Route::match(['get','post'],'add-category','admin\CategoryController@addCategory')->name('addCategory');
     Route::match(['get','post'],'view-category','admin\CategoryController@viewCategory')->name('viewCategory');

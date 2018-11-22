@@ -30,6 +30,13 @@
             </ul>
         </li>
 
+        @if(Auth::user()->role == 1)
+            <li class="submenu"> <a href="#"><i class="icon icon-th-list"></i> <span>User List</span> <span class="label label-important">1</span></a>
+                <ul <?php if(preg_match('/user_list/i',$url)) { ?> style="display: block;" <?php } ?>>
+                    <li <?php if(preg_match('/user_list/i',$url)) { ?> class="active" <?php } ?>><a href="{{route('userlist')}}">User List</a></li>
+                </ul>
+            </li>
+       @endif
 
     </ul>
 </div>

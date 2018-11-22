@@ -52,4 +52,51 @@ class DashboardController extends Controller
         }
 
     }
+
+    public function showprofile(){
+        $user=User::where('id','=',Auth::user()->id)->first();
+        if(!empty($user)){
+            return view('pages.admin.profile.profile')->with(compact('user'));
+        }
+
+    }
+
+    public function showuserlist(){
+        $user=User::get();
+        if(!empty($user)){
+            return view('pages.admin.userlist.userlist')->with(compact('user'));
+        }
+
+    }
+    public function usertosuperadmin($id){
+       if(isset($id) && is_numeric($id)){
+           $user=User::where('id','=',$id)->update(['role'=>3]);
+           if($user){
+               return redirect()->back()->with(['success'=>'Update successfull']);
+           }
+           else
+               return redirect()->back()->with(['dismiss'=>'Update not successfull']);
+       }
+
+    }
+    public function deleteUser($id=null){
+     if (isset($id) && is_numeric($id)) {
+        //$filepath = 'images/frontend_images/banners/';
+       // $banners = Banner::where(['id' => $id])->first();
+        //$fileName = $banners->image;
+        //$old_image = $filepath . $fileName;
+      //  if (file_exists($old_image)) {
+            //@unlink($old_image);
+       // }
+        $deleteUser = User::where(['id' => $id])->delete();
+        if ($deleteUser) {
+            return redirect()->back()->with(['success' => 'User Deleted Successfully']);
+        } else {
+            return redirect()->back()->with(['dismiss' => 'User not Deleted']);
+        }
+    }
+}
+
+
+
 }

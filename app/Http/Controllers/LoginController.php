@@ -11,7 +11,6 @@ use Illuminate\Support\Facades\Validator;
 use Mail;
 use Illuminate\Support\Facades\Session;
 
-
 class LoginController extends Controller
 {
     public function login()
@@ -29,7 +28,7 @@ class LoginController extends Controller
         $rules = [
             'username' => 'required',
             'email' => 'required|email|unique:users',
-            'password' => 'required|min:8',
+            'password' => ['required','min:8','regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*(_|[^\w])).+$/'],
             'conpassword' => 'required|min:8|same:password',
         ];
 
@@ -38,7 +37,7 @@ class LoginController extends Controller
             'username.required' => __('User Name field can\'t be empty'),
             'password.required' => __('Password field can\'t be empty'),
             'password.min' => __('Password length must be above 8 characters.'),
-            //'password.regex' => __('Password must be consist of one Uppercase, one Lowercase, one Special Character and one Number!'),
+            'password.regex' => __('Password must be consist of one Uppercase, one Lowercase, one Special Character and one Number!'),
             'email.required' => __('Email field can\'t be empty'),
             'email.unique' => __('Email Address already exists'),
             'email.email' => __('Invalid Email.'),
@@ -62,6 +61,12 @@ class LoginController extends Controller
 
     }
 
+    /*
+     * 1-Admin
+     * 3-super Admin
+     * 2-user
+     * */
+
     public function postlogin(Request $request)
     {
         $rules = [
@@ -80,9 +85,12 @@ class LoginController extends Controller
         if (Auth::attempt(['email' => $request->email, 'password' => $request->password])) {
 
 //            Session::put('adminsession', $request->email);
-            if (Auth::user()->role == 2) {
+            if (Auth::user()->role == 1 || Auth::user()->role == 3) {
                 return redirect()->route('adminDashboard')->with(['success' => __('Login Successfull')]);
-            } else {
+            } else if (Auth::user()->role == 2) {
+                return redirect()->back()->with(['wait' => __('Please wait for admin approval')]);
+            }
+            else {
                 Auth::logout();
                 return redirect()->back()->with(['dismiss' => __('You are not authorised')]);
             }
