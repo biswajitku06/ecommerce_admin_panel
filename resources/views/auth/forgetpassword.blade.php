@@ -21,6 +21,7 @@
 <div id="loginbox">
     <form id="recoverform loginform" action="{{route('forgetPasswordProcess')}}" method="post" class="form-vertical">
         {{csrf_field()}}
+        <div class="control-group normal_text"> <h3 style="color:green">FORGOT PASSWORD</h3></div>
         <p class="normal_text">Enter your e-mail address below and we will send you instructions how to recover a
             password.</p>
 
@@ -29,7 +30,7 @@
                 <span class="add-on bg_lo"><i class="icon-envelope"></i></span><input type="email" name="email"
                                                                                       placeholder="E-mail address"/>
             </div>
-            <span style="color: red">{{$errors->has('email')?$errors->first('email'):''}}</span>
+            <span style="color: red;margin-left:20px">{{$errors->has('email')?$errors->first('email'):''}}</span>
         </div>
 
         <div class="form-actions">

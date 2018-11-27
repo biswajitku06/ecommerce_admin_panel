@@ -58,7 +58,7 @@
         <div class="auth-box bg-dark border-top border-secondary">
             <div>
                 <div class="text-center p-t-20 p-b-20">
-                    <div class="control-group normal_text"> <h3 style="color:green">Registration Form</h3></div>
+                    <div class="control-group normal_text"> <h3 style="color:green">SIGN UP</h3></div>
                 </div>
                 <!-- Form -->
                 <form class="form-horizontal m-t-20" action="{{route('register')}}" method="post">

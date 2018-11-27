@@ -33,7 +33,7 @@
 <div id="loginbox">
     <form id="loginform" class="form-vertical" action="{{route('postlogin')}}" method="post">
         {{csrf_field()}}
-        <div class="control-group normal_text"> <h3 style="color:green">Login Form</h3></div>
+        <div class="control-group normal_text"> <h3 style="color:green">SIGN IN</h3></div>
         <div class="control-group">
             <div class="controls">
                 <div class="main_input_box">

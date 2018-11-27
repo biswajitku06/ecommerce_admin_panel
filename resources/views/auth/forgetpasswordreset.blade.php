@@ -22,7 +22,7 @@
 
 <div id="loginbox">
 
-        <p class="normal_text">You will receive an email with further instructions if your account exists. Please check your email.</p>
+        <p class="normal_text from-vertical">You will receive an email with further instructions if your account exists. Please check your email.</p>
 
         <div class="controls">
         </div>
