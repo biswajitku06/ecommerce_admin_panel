@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Matrix Admin</title>
+    <title>Ecommerce Admin Panel</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{{asset('css/backend_css/bootstrap.min.css')}}" />
@@ -45,6 +45,9 @@
 
 
 <script src="{{asset('js/backend_js/jquery.min.js')}}"></script>
+<scritp type="js/javascript">
+    var my_url= "<?= "sdasd" ?>";
+</scritp>
 {{--<script src="{{asset('js/backend_js/jquery.ui.custom.js')}}"></script>--}}
 <script src="{{asset('js/backend_js/bootstrap.min.js')}}"></script>
 <script src="{{asset('js/backend_js/jquery.uniform.js')}}"></script>

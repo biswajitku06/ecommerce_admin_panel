@@ -1,5 +1,11 @@
 @extends('adminlayout.design')
-
+@section('after-style')
+    <style>
+        #status {
+            opacity: 1 !important;
+        }
+    </style>
+@endsection
 @section('content')
 
 

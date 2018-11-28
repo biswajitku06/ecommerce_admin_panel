@@ -21,7 +21,8 @@
 
 
 <div id="loginbox">
-
+     <div  class="form-vertical">
+         <div class="control-group normal_text"> <h3 style="color:green"> FORGOT PASSWORD SENT MESSAGE</h3></div>
         <p class="normal_text from-vertical">You will receive an email with further instructions if your account exists. Please check your email.</p>
 
         <div class="controls">
@@ -32,7 +33,7 @@
                 <button type="submit" class="btn btn-block btn-primary btn-rounded">{{__('Back')}}  </button>
             </a>
         </div>
-
+     </div>
 </div>
 
 @section('script')
@@ -44,3 +45,6 @@
 @endsection
 
 @include('auth.footer')
+
+
+

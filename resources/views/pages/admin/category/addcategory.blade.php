@@ -1,5 +1,11 @@
 @extends('adminlayout.design')
-
+@section('after-style')
+    <style>
+        #status {
+            opacity: 1 !important;
+        }
+    </style>
+@endsection
 @section('content')
 
 
@@ -56,9 +62,9 @@
                                 </div>
                             </div>
 
-                            <div class="control-group">
+                            <div class="control-group" >
                                 <label class="control-label">Enable</label>
-                                <div class="controls">
+                                <div class="controls" >
                                     <input type="checkbox" name="status" id="status" value="2">
                                 </div>
                             </div>

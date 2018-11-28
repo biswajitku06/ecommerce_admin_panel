@@ -5,14 +5,16 @@ $(document).ready(function(){
 
         var current=$('#current_pwd').val();
 
-        var my_url="http://localhost/ecommerce_admin_panel/public";
+
+        alert(my_url);
         $.ajax({
             type:'get',
-             url:my_url+'/admin/check_password',
+             url: url('/admin/check_password'),
              data:{current_pwd:current},
             datatype:'json',
             success:function (resp) {
                 if(resp=="false")
+
                     $('#checkpwd').html("<font color:red>Current Password is incorrect</font>")
                 else if(resp=="true")
                     $('#checkpwd').html("<font color:green>Current Password is correct</font>")
