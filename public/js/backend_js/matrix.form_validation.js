@@ -1,34 +1,32 @@
 
-$(document).ready(function(){
-
-    $('#current_pwd').keyup(function () {
-
-        var current=$('#current_pwd').val();
-
-
-        alert(my_url);
-        $.ajax({
-            type:'get',
-             url: url('/admin/check_password'),
-             data:{current_pwd:current},
-            datatype:'json',
-            success:function (resp) {
-                if(resp=="false")
-
-                    $('#checkpwd').html("<font color:red>Current Password is incorrect</font>")
-                else if(resp=="true")
-                    $('#checkpwd').html("<font color:green>Current Password is correct</font>")
-            },
-            // error:function (resp) {
-            //    alert('error');
-            // }
-        });
-
-    });
-
-    // $('#clickdelete').click(function () {
-    //     return confirm("Do you want to delete this ?");
-    // })
+// $(document).ready(function(){
+//
+//     $('#current_pwd').keyup(function () {
+//
+//         var current=$('#current_pwd').val();
+//
+//         $.ajax({
+//             type:'get',
+//              url: url('/admin/check_password'),
+//              data:{current_pwd:current},
+//             datatype:'json',
+//             success:function (resp) {
+//                 if(resp=="false")
+//
+//                     $('#checkpwd').html("<font color:red>Current Password is incorrect</font>")
+//                 else if(resp=="true")
+//                     $('#checkpwd').html("<font color:green>Current Password is correct</font>")
+//             },
+//             // error:function (resp) {
+//             //    alert('error');
+//             // }
+//         });
+//
+//     });
+//
+//     // $('#clickdelete').click(function () {
+//     //     return confirm("Do you want to delete this ?");
+//     // })
 
 
 	$('input[type=checkbox],input[type=radio],input[type=file]').uniform();
